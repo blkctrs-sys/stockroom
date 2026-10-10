@@ -150,6 +150,14 @@
     render();
   });
 
+  // ---------- jump to the first open order with a price or unit flag ----------
+  SR.route(/^\/orders\/flagged$/, (view) => {
+    const open = SR.state.orders.filter((o) => o.status === 'ordered').sort((a, b) => a.deliveryDate.localeCompare(b.deliveryDate));
+    const hit = open.find((o) => o.lines.some((l) => { const c = SR.priceCheck(l.itemId, l.unit, l.cost, o.deliveryDate); return c && c.kind !== 'change'; }));
+    if (hit) location.replace('#/orders/' + hit.id);
+    else { view.innerHTML = '<p class="empty">No open orders need a second look.</p>'; }
+  });
+
   // ---------- order detail & receiving ----------
   SR.route(/^\/orders\/(o_\w+)$/, (view, id) => {
     const o = SR.order(id);
