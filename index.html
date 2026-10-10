@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stockroom</title>
+  <meta name="description" content="Stockroom: inventory control for orders, receiving, cycle counts, and monthly reports.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M8 12l8-4 8 4v9l-8 4-8-4z' fill='none' stroke='white' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M8 12l8 4 8-4M16 16v9' fill='none' stroke='white' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+  <div class="app">
+    <aside class="side">
+      <a class="brand" href="#/">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7"/><path d="M8 12l8-4 8 4v9l-8 4-8-4zM8 12l8 4 8-4M16 16v9"/></svg>
+        <span>Stockroom</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#/">Dashboard</a>
+        <a href="#/orders">Orders</a>
+        <a href="#/counts">Counts</a>
+        <a href="#/items">Items</a>
+        <a href="#/log">Stock log</a>
+        <a href="#/reports">Reports</a>
+        <a href="#/data">Data</a>
+      </nav>
+      <p class="side-foot">Data stays on this device.</p>
+    </aside>
+    <main>
+      <div class="banner" id="banner" hidden></div>
+      <div id="view" tabindex="-1"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="dialog"></dialog>
+
+  <script src="js/store.js?v=6"></script>
+  <script src="js/demo.js?v=6"></script>
+  <script src="js/importer.js?v=6"></script>
+  <script src="js/ui.js?v=6"></script>
+  <script src="js/charts.js?v=6"></script>
+  <script src="js/pages-orders.js?v=6"></script>
+  <script src="js/pages-stock.js?v=6"></script>
+  <script src="js/pages-reports.js?v=6"></script>
+  <script>SR.start();</script>
+</body>
+</html>
